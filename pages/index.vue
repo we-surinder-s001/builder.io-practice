@@ -1,6 +1,7 @@
-<script setup></script>
 <template>
-  <h1>Welcome to Your Nuxt3 App</h1>
+  <div>index Page</div>
 </template>
 
-<style scoped></style>
+<script setup></script>
+
+<style lang="scss" scoped></style>
