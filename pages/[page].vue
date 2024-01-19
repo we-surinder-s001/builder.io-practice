@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Builder />
+    <BuilderComponent />
   </div>
 </template>
 

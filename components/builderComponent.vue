@@ -1,10 +1,11 @@
 <template>
+  <Head>
+    <Title>{{ content?.data?.title }}</Title>
+    <Meta name="description" :content="content?.data?.description" />
+    <Meta v-if="content?.data?.addNoIndex" name="robots" content="nofollow" />
+  </Head>
   <div id="home">
     <div v-if="content || isPreviewing()">
-      <!-- <div>
-        page title:
-        {{ content?.data?.title || "Unpublished" }}
-      </div> -->
       <RenderContent
         model="page"
         :content="content"
@@ -38,6 +39,6 @@ const { data: content } = await useAsyncData("builderData", () =>
     },
   })
 );
-</script>
 
-<style scoped></style>
+console.log(content.value);
+</script>

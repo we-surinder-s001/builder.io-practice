@@ -310,10 +310,10 @@
     "@babel/helper-validator-identifier" "^7.22.20"
     to-fast-properties "^2.0.0"
 
-"@builder.io/sdk-vue@^0.7.6":
-  version "0.7.6"
-  resolved "https://registry.yarnpkg.com/@builder.io/sdk-vue/-/sdk-vue-0.7.6.tgz#06160cdc92388160d768110eb0dd854e86396c65"
-  integrity sha512-529+8fwrS/dUhAVUr8Rpft6umAxGnefBEmx3ijcicHPEHGKLMyB501sq9/YZtMJvaYYG5akAM8cQNOcxD2ivbg==
+"@builder.io/sdk-vue@^0.10.0":
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/@builder.io/sdk-vue/-/sdk-vue-0.10.0.tgz#bba025b977cb85547674afb6e2d8efc3ec09bf02"
+  integrity sha512-aleNrYivBLet7+mETrslsqTC55ORS33uk3z5sukSUBDQsjW19Q12PsOoxdj5lsKYgXEFQFzGIYMTghHclFXEtA==
   dependencies:
     isolated-vm "^4.6.0"
 

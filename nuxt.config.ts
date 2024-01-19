@@ -6,4 +6,10 @@ export default defineNuxtConfig({
       BUILDER_KEY: process.env.NUXT_BUILDER_KEY,
     },
   },
+  build: {
+    /**
+     * You need to transpile the Builder.io Vue SDK for it to work correctly.
+     */
+    transpile: ["@builder.io/sdk-vue"],
+  },
 });
