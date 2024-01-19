@@ -11,6 +11,7 @@
         :content="content"
         :api-key="BUILDER_PUBLIC_API_KEY"
       />
+      <!-- :customComponents="REGISTERED_COMPONENTS" -->
     </div>
     <div v-else>Content not Found</div>
   </div>
@@ -22,6 +23,18 @@ import {
   getContent,
   isPreviewing,
 } from "@builder.io/sdk-vue/vue3";
+// import "@builder.io/widgets/dist/lib/builder-widgets-async";
+// import { accordionConfig } from "@builder.io/widgets/dist/lib/components/Accordion.config";
+// import { AccordionComponent } from "@builder.io/widgets/dist/lib/components/Accordion";
+// Register your Builder components
+const REGISTERED_COMPONENTS = [
+  {
+    // component: AccordionComponent,
+    // accordionConfig,
+    // name: "ABC",
+    // canHaveChildren: true,
+  },
+];
 
 const runtimeConfig = useRuntimeConfig();
 
