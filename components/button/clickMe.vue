@@ -3,9 +3,15 @@
 </template>
 
 <script setup>
+const {click_text} = defineProps(['click_text'])
+
 const clicked = () => {
-  console.log("clicked");
+  console.log(click_text);
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+button {
+  all: unset;
+}
+</style>
