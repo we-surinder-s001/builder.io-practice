@@ -1,4 +1,5 @@
 import ClickMe from './components/button/clickMe'
+import Button from './components/button/Button'
 
 export const REGISTERED_COMPONENTS = [
     {
@@ -14,8 +15,11 @@ export const REGISTERED_COMPONENTS = [
         defaultStyles: {
             textAlign: 'center',
             fontSize: "40px",
-            color: "red"
+            color: "red",
+            border: "3px solid red"
         },
+        canHaveChildren: true,
+        // noWrap: true,
     }, {
         component: ClickMe,
         name: 'ABC',
@@ -26,6 +30,20 @@ export const REGISTERED_COMPONENTS = [
                 defaultValue: 'clicked',
             },
         ],
-        hideFromInsertMenu: true
-    },
+        hideFromInsertMenu: true,
+        // noWrap: true,
+    }
+    // , {
+    //     component: Button,
+    //     name: 'Button',
+    //     override: true,
+    //     noWrap: false,
+    //     // defaultStyles: {
+    //     //     textAlign: 'center',
+    //     //     fontSize: "40px",
+    //     //     color: "red",
+    //     //     border: "3px solid red",
+    //     //     // all:
+    //     // },
+    // },
 ]

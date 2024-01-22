@@ -1,5 +1,6 @@
 <template>
-  <button @click="clicked">click me</button>
+  <button @click="clicked">here: {{ click_text }}</button>
+  <slot />
 </template>
 
 <script setup>

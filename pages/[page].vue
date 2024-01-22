@@ -1,7 +1,8 @@
 <template>
   <div>
-    <BuilderComponent />
+    <BuilderComponent/>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+</script>
