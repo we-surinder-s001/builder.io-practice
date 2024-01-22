@@ -10,8 +10,8 @@
         model="page"
         :content="content"
         :api-key="BUILDER_PUBLIC_API_KEY"
+        :customComponents="REGISTERED_COMPONENTS"
       />
-      <!-- :customComponents="REGISTERED_COMPONENTS" -->
     </div>
     <div v-else>Content not Found</div>
   </div>
@@ -23,15 +23,16 @@ import {
   getContent,
   isPreviewing,
 } from "@builder.io/sdk-vue/vue3";
+import ClickMe from "./button/clickMe.vue";
 // import "@builder.io/widgets/dist/lib/builder-widgets-async";
 // import { accordionConfig } from "@builder.io/widgets/dist/lib/components/Accordion.config";
 // import { AccordionComponent } from "@builder.io/widgets/dist/lib/components/Accordion";
 // Register your Builder components
 const REGISTERED_COMPONENTS = [
   {
-    // component: AccordionComponent,
+    component: ClickMe,
     // accordionConfig,
-    // name: "ABC",
+    name: "ABC",
     // canHaveChildren: true,
   },
 ];
