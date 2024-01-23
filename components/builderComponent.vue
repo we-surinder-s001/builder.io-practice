@@ -19,6 +19,13 @@ import {
 //   },
 // ];
 
+const {model} = defineProps({
+  model: {
+    type: String,
+    default: "page",
+  }
+})
+
 const runtimeConfig = useRuntimeConfig();
 
 const BUILDER_PUBLIC_API_KEY = runtimeConfig.public.BUILDER_KEY;
@@ -28,7 +35,7 @@ const route = useRoute();
 // fetch builder content data
 const {data: content} = await useAsyncData("builderData", () =>
     getContent({
-      model: "page",
+      model: model,
       apiKey: BUILDER_PUBLIC_API_KEY,
       userAttributes: {
         urlPath: route.path,
@@ -46,7 +53,7 @@ const {data: content} = await useAsyncData("builderData", () =>
   <div id="home">
     <div v-if="content || isPreviewing()">
       <RenderContent
-          model="page"
+          :model="model"
           :content="content"
           :api-key="BUILDER_PUBLIC_API_KEY"
           :customComponents="REGISTERED_COMPONENTS"

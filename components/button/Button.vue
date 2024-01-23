@@ -1,3 +1,3 @@
 <template>
-  <button>clik</button>
+  <button>click</button>
 </template>

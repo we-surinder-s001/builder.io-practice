@@ -1,6 +1,7 @@
 <template>
   <div>
-    <BuilderComponent/>
+    <BuilderComponent model="section"/>
+    <BuilderComponent model="page"/>
   </div>
 </template>
 
