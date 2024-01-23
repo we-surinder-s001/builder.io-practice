@@ -1,5 +1,5 @@
 <script setup>
-import {REGISTERED_COMPONENTS} from "../init-builder"
+import {REGISTERED_COMPONENTS} from "../../init-builder"
 import {
   RenderContent,
   getContent,

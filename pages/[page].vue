@@ -1,7 +1,8 @@
 <template>
   <div>
-    <BuilderComponent model="section"/>
     <BuilderComponent model="page"/>
+    <BuilderSectionComponent model="section"/>
+    <BuilderSectionComponent model="test-section"/>
   </div>
 </template>
 
