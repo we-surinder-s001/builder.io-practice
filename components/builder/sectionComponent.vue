@@ -38,5 +38,4 @@ const content = await fetchOneEntry({
         :api-key="BUILDER_PUBLIC_API_KEY"
     />
   </div>
-  <div v-else>Content not Found</div>
 </template>
