@@ -1,10 +1,23 @@
 <template>
   <div>
     <BuilderComponent model="page"/>
-    <BuilderSectionComponent model="section"/>
-    <BuilderSectionComponent model="test-section"/>
+    <BuilderSectionComponent v-for="section in sections" :key="section.id" :model="section.data.model"/>
   </div>
 </template>
 
-<script setup>
+<script lang="ts" setup>
+import {fetchEntries} from "@builder.io/sdk-vue";
+
+const runtimeConfig = useRuntimeConfig();
+const BUILDER_PUBLIC_API_KEY = runtimeConfig.public.BUILDER_KEY;
+
+const sections: any = await fetchEntries({
+  model: 'sections',
+  apiKey: BUILDER_PUBLIC_API_KEY,
+  sort: {
+    createdDate: 1
+  },
+  noTraverse: false,
+  includeRefs: false
+})
 </script>

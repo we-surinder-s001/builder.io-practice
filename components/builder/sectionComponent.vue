@@ -1,7 +1,7 @@
 <script setup>
 import {
   RenderContent,
-  fetchOneEntry,
+  fetchEntries,
   isPreviewing,
 } from "@builder.io/sdk-vue";
 
@@ -20,7 +20,7 @@ const BUILDER_PUBLIC_API_KEY = runtimeConfig.public.BUILDER_KEY;
 const route = useRoute();
 
 // fetch builder content data
-const content = await fetchOneEntry({
+const content = await fetchEntries({
   model: model,
   apiKey: BUILDER_PUBLIC_API_KEY,
   userAttributes: {
@@ -33,8 +33,10 @@ const content = await fetchOneEntry({
 <template>
   <div v-if="content || isPreviewing()">
     <RenderContent
+        v-for="section in content"
+        :key="section.id"
         :model="model"
-        :content="content"
+        :content="section"
         :api-key="BUILDER_PUBLIC_API_KEY"
     />
   </div>
