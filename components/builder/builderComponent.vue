@@ -37,10 +37,11 @@ const content = await fetchEntries({
   model: model,
   apiKey: BUILDER_PUBLIC_API_KEY,
   userAttributes: {
-    urlPath: '/' + route.params.slug,
+    urlPath: '/' + route.path.split('/')[route.path.split('/').length - 1],
   },
   options: {enrich: true}
 })
+
 </script>
 
 <template>
