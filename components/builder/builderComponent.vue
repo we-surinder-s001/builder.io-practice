@@ -2,8 +2,8 @@
 import {REGISTERED_COMPONENTS} from "../../init-builder"
 import {
   RenderContent,
-  getContent,
   isPreviewing,
+  fetchEntries,
 } from "@builder.io/sdk-vue";
 
 // import "@builder.io/widgets/dist/lib/builder-widgets-async";
@@ -33,15 +33,14 @@ const BUILDER_PUBLIC_API_KEY = runtimeConfig.public.BUILDER_KEY;
 const route = useRoute();
 
 // fetch builder content data
-const {data: content} = await useAsyncData("builderData", () =>
-    getContent({
-      model: model,
-      apiKey: BUILDER_PUBLIC_API_KEY,
-      userAttributes: {
-        urlPath: route.path,
-      },
-    })
-);
+const content = await fetchEntries({
+  model: model,
+  apiKey: BUILDER_PUBLIC_API_KEY,
+  userAttributes: {
+    urlPath: '/' + route.params.slug,
+  },
+  options: {enrich: true}
+})
 </script>
 
 <template>
@@ -53,10 +52,11 @@ const {data: content} = await useAsyncData("builderData", () =>
   <div id="home">
     <div v-if="content || isPreviewing()">
       <RenderContent
+          v-for="builder in content"
+          :key="builder.id"
           :model="model"
-          :content="content"
+          :content="builder"
           :api-key="BUILDER_PUBLIC_API_KEY"
-          :customComponents="REGISTERED_COMPONENTS"
       />
     </div>
     <div v-else>Content not Found</div>
